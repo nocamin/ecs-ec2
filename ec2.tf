@@ -8,8 +8,10 @@ resource "aws_launch_template" "ecs_lt" {
   key_name               = "devops-shack"
   vpc_security_group_ids = [aws_security_group.security_group.id]
   iam_instance_profile {
-    name = "ecsInstanceRole"
+    name = aws_iam_instance_profile.ecs_instance_profile.name
   }
+
+# iam_instance_profile =  aws_iam_instance_profile.ecs_instance_profile.name
 
   block_device_mappings {
     device_name = "/dev/xvda"
