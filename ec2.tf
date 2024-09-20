@@ -1,8 +1,8 @@
 resource "aws_launch_template" "ecs_lt" {
   name_prefix   = "ecs-template"
  #image_id      = "ami-062c116e449466e7f"
-  image_id      = "ami-0ebfd941bbafe70c6 "
-  instance_type = "t2.micro"
+  image_id      = "ami-0ebfd941bbafe70c6"
+  instance_type = "t2.medium"
 
 # key_name               = "ec2ecsglog"
   key_name               = "devops-shack"
@@ -82,6 +82,3 @@ resource "aws_lb_target_group" "ecs_tg" {
     path = "/"
   }
 }
-
-
-
