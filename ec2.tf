@@ -1,9 +1,11 @@
 resource "aws_launch_template" "ecs_lt" {
   name_prefix   = "ecs-template"
-  image_id      = "ami-062c116e449466e7f"
-  instance_type = "t3.micro"
+ #image_id      = "ami-062c116e449466e7f"
+  image_id      = "ami-0ebfd941bbafe70c6 "
+  instance_type = "t2.micro"
 
-  key_name               = "ec2ecsglog"
+# key_name               = "ec2ecsglog"
+  key_name               = "devops-shack"
   vpc_security_group_ids = [aws_security_group.security_group.id]
   iam_instance_profile {
     name = "ecsInstanceRole"
@@ -12,7 +14,7 @@ resource "aws_launch_template" "ecs_lt" {
   block_device_mappings {
     device_name = "/dev/xvda"
     ebs {
-      volume_size = 30
+      volume_size = 20
       volume_type = "gp2"
     }
   }
