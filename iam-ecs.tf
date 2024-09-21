@@ -31,7 +31,7 @@ resource "aws_iam_role_policy_attachment" "ssm_policy" {
 
 # Attach policies to the role (example: AmazonEC2ContainerRegistryReadOnly)
 resource "aws_iam_role_policy_attachment" "container_policy" {
-  policy_arn = "arn:aws:iam::aws:policy/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
   role       = aws_iam_role.ecs_instance_role.name
 }
 
